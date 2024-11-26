@@ -10,17 +10,17 @@ struct Node *front=NULL;
 struct Node *rear=NULL;
 
 void enqueue(int x){
-    struct Node *temp = (struct Node *) malloc(sizeof(struct Node));
-    temp->data=x;
-    temp->next=NULL;
+    struct Node *newNode = (struct Node *) malloc(sizeof(struct Node));
+    newNode->data=x;
+    newNode->next=NULL;
 
     if(front==NULL && rear==NULL){
-        front=rear=temp;
+        front=rear=newNode;
         return;
     }
     else{
-        rear->next=temp;
-        rear=temp;
+        rear->next=newNode;
+        rear=newNode;
     }
 }
 
