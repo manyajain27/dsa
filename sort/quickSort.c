@@ -2,6 +2,7 @@
 
 //quicksort
 /*
+{9,3,5,7,1,2,8}
 in quicksort we take the pivot and put all the elements smaller than pivot 
 to its left and all the elements greater than pivot to its right
 and then we recursively apply the same process to the left and right subarrays
@@ -37,8 +38,8 @@ int partition(int arr[], int low, int high){
 void quickSort(int arr[], int low, int high){
     if(low<high){
         int j=partition(arr, low, high);
-        quickSort(arr, low, j);
-        quickSort(arr, j+1, high);
+        quickSort(arr, low, j); //left
+        quickSort(arr, j+1, high); //right
     }
 }
 

@@ -174,5 +174,24 @@ int main(){
         printf("Element found\n");
     }
     
+    //merge 
+    struct Node* list1=NULL;
+    list1=insertAtEnd(list1, 1);
+    list1=insertAtEnd(list1, 2);
+    list1=insertAtEnd(list1, 3);
+    list1=insertAtEnd(list1, 4);
+    list1=insertAtEnd(list1, 5);
+    traversal(list1);
+    printf("\n");
+
+    struct Node* list2=NULL;
+    list2=insertAtEnd(list2, 6);
+    list2=insertAtEnd(list2, 7);
+    list2=insertAtEnd(list2, 8);
+
+    traversal(list2);
+    printf("\n");
+    head=merge(list1, list2);
+    traversal(head);
     return 0;
 }

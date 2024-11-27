@@ -81,7 +81,7 @@ int main(){
 }
 
 //procedure for merging:
-//lets say unsroted arrays to be merged are [3,5,7,9] and [1,2,8]. arrays to be merged must be sorted
+//lets say sorted arrays to be merged are [3,5,7,9] and [1,2,8]. arrays to be merged must be sorted
 //we compare 3 and 1 since 1<3 we store 1 in main array and move to next element in right subarray
 //now we compare 3 and 2 since 2<3 we store 2 in main array and move to next element in right subarray
 //now we compare 3 and 8 since 3<8 we store 3 in main array and move to next element in left subarray

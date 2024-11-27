@@ -3,6 +3,8 @@
 #define N 5
 int queue[N]; 
 int front = -1, rear = -1;
+//  0 1 2 3 4
+// [_ _ 1 9 6] (i+1)%size
 
 void enqueue(int x){
     if(front == -1 && rear == -1){

@@ -1,9 +1,9 @@
 #include<stdio.h>
 
-//fibonacci search
+//fibonacci search 
 /*
 in fibonacci search we use fibonacci series to find the position of the element to be searched
-array should be sorted.
+array should be sorted. 0 1 1 2 3 5 8 
 steps:
 1. we generate fibonacci series till the element is greater than or equal to the size of the array
 2. If F(k) = 0, then stop and print the message as element not found.
@@ -54,9 +54,9 @@ int main(){
 
         }
         else if(arr[i]>data){
-            FibM = FibM2;
-            FibM1 = FibM1 - FibM2;
-            FibM2 = FibM - FibM1; //move two steps left in the fibonacci series
+            FibM = FibM2; //3
+            FibM1 = FibM1 - FibM2;//2
+            FibM2 = FibM - FibM1; //move two steps left in the fibonacci series //1
         }
 
     }
