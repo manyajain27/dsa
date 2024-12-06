@@ -14,7 +14,7 @@ void dfs(int graph[][5], int start)
     printf("%d ", start);
     for (int i = 0; i < N; i++)
     {
-        if (graph[start][i] != 0 && visited[i] == 0)
+        if (graph[start][i] == 1 && visited[i] == 0)
         {
             dfs(graph, i);
         }

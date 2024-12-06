@@ -42,6 +42,8 @@ int isEmpty(){
     }
 }
 
+
+
 void bfs(int graph[][N], int visited[], int start, int vertices){
     
     //initialize visited array to [0,0,0,0,0,0,0,0,0,0]

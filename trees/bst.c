@@ -24,12 +24,21 @@ struct Node* insert(struct Node* root, int data) {
     } else if (data > root->data) {
         root->right = insert(root->right, data);
     }
-    return root;
+    else{
+        return root;
+    }
 }
 
 struct Node* findMin(struct Node* root) {
     while (root->left != NULL) {
         root = root->left;
+    }
+    return root;
+}
+
+struct Node* findMax(struct Node* root) {
+    while (root->right != NULL) {
+        root = root->right;
     }
     return root;
 }
@@ -109,6 +118,21 @@ struct Node* search(struct Node* root, int data) {
     
 }
 
+//mirror image of the tree
+void mirror(struct Node* root) {
+    if (root == NULL) {
+        return;
+    }
+    else {
+        struct Node* temp;
+        mirror(root->left); //postorder traversal
+        mirror(root->right);
+        temp = root->left;
+        root->left = root->right;
+        root->right = temp;
+    }
+}
+
 int main() {
     struct Node* root = NULL;
     root = insert(root, 50);
@@ -146,6 +170,14 @@ int main() {
     } else {
         printf("Not found\n");
     }
+
+    printf("Minimum element: %d\n", findMin(root)->data);
+    printf("Maximum element: %d\n", findMax(root)->data);
+
+    printf("Mirroring the tree\n");
+    mirror(root);
+    printf("Inorder traversal: ");
+    inorder(root);
 
     return 0;
 }
