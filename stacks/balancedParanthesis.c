@@ -46,6 +46,7 @@ void isBalanced(char *exp){
             }
             pop();
         }
+        //we ignore the symbols & characters other than paranthesis
     }
     if(isEmpty()){
         printf("Balanced\n");
@@ -58,7 +59,7 @@ void isBalanced(char *exp){
 
 int main(){
 
-    char exp[] = "())";
+    char exp[] = "(a+b)";
     isBalanced(exp);
 
     return 0;
