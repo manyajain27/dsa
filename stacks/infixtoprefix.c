@@ -43,11 +43,19 @@ void reverse(char *exp) {
     char temp;
     for (i = 0, j = strlen(exp) - 1; i < j; i++, j--) {
         // Swap brackets as well
-        if (exp[i] == '(') exp[i] = ')';
-        else if (exp[i] == ')') exp[i] = '(';
+        if (exp[i] == '('){ 
+            exp[i] = ')';
+        }
+        else if (exp[i] == ')'){
+             exp[i] = '(';
+        }
         
-        if (exp[j] == '(') exp[j] = ')';
-        else if (exp[j] == ')') exp[j] = '(';
+        if (exp[j] == '('){ 
+            exp[j] = ')';
+        }
+        else if (exp[j] == ')'){ 
+            exp[j] = '(';
+        }
         
         // Swap characters
         temp = exp[i];
@@ -56,7 +64,7 @@ void reverse(char *exp) {
     }
 }
 
-void infixtoprefix(char *exp) {
+void infixtoprefix(char exp[]) {
     char result[MAX];
     int i, j = 0;
     char symbol;
@@ -68,19 +76,15 @@ void infixtoprefix(char *exp) {
     for (i = 0; exp[i] != '\0'; i++) {
         symbol = exp[i];
 
-        if (isalnum(symbol)) {
-            result[j++] = symbol;
-        }
-        else if (symbol == '(') {
+        
+        if (symbol == '(') {
             push(symbol);
         }
         else if (symbol == ')') {
             while (top != -1 && stack[top] != '(') {
                 result[j++] = pop();
             }
-            if (top != -1 && stack[top] == '(') {
-                pop();
-            }
+            pop();
         }
         else if (symbol == '+' || symbol == '-' || 
                  symbol == '*' || symbol == '/') {
@@ -89,6 +93,10 @@ void infixtoprefix(char *exp) {
             }
             push(symbol);
         }
+        else{
+            result[j++] = symbol;
+        }
+        
     }
 
     // Pop remaining operators
@@ -106,7 +114,7 @@ void infixtoprefix(char *exp) {
 }
 
 int main() {
-    char exp[MAX] = "((a+b)*c)-d/e";
+    char exp[MAX] = "a*f+b-*nm/+";
     infixtoprefix(exp);
     return 0;
 }
