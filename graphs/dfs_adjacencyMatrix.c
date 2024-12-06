@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define N 5
 int visited[5];
-
+//dfs
 void dfs(int graph[][5], int start)
 {
     if (visited[start] == 1)
@@ -16,7 +16,7 @@ void dfs(int graph[][5], int start)
     {
         if (graph[start][i] == 1 && visited[i] == 0)
         {
-            dfs(graph, i);
+            dfs(graph, i); //recursive call
         }
     }
 }
